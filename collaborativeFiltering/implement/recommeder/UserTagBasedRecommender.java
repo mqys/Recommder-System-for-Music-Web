@@ -23,6 +23,7 @@ public class UserTagBasedRecommender implements UserTagBasedRecommend {
 		HashMap<Integer,Double> itemSimList = new HashMap<Integer,Double>();
 		List<Integer> topNTag = tv.getTopNTag();
 		HashMap<Integer,List<Integer>> itemList = tvm.getFullTagList();
+		HashMap<Integer,List<Integer>> likedList = tvm.getLikeList();
 		
 		//calculate similarity
 		double sim = 0.0;
@@ -45,7 +46,12 @@ public class UserTagBasedRecommender implements UserTagBasedRecommend {
 		});
 		//get topN
 		this.recomItemList = new ArrayList<Integer>();
+		int item =0;
 		for(int i=0;i<sortItemSimList.size()&&i<itemNum;i++){
+			//delete repeated item
+			item = sortItemSimList.get(i).getKey();
+			if(likedList.containsKey(item))
+				continue;
 			this.recomItemList.add(sortItemSimList.get(i).getKey());
 		}
 	}

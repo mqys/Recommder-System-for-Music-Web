@@ -11,7 +11,6 @@ import java.util.Map.Entry;
 import collaborativeFiltering.model.TagModel;
 import collaborativeFiltering.recommender.ItemTagBasedRecommend;
 import collaborativeFiltering.similarity.ItemPropertySimilarity;
-import collaborativeFiltering.tagVote.TagVote;
 
 public class ItemTagBasedRecommender implements ItemTagBasedRecommend {
 
@@ -45,6 +44,10 @@ public class ItemTagBasedRecommender implements ItemTagBasedRecommend {
 		//get topN
 		this.recomItemList = new ArrayList<Integer>();
 		for(int i=0;i<sortItemSimList.size()&&i<itemNum;i++){
+			//delete repeated item
+			//to-do 
+			
+			
 			this.recomItemList.add(sortItemSimList.get(i).getKey());
 		}
 	}
