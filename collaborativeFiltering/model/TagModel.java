@@ -8,5 +8,5 @@ public interface TagModel {
 	
 	HashMap<Integer,List<Integer>> getFullTagList();
 	List<Integer> getCurrentItemTag();
-	
+	int getCurrentItemId();
 }

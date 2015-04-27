@@ -22,6 +22,7 @@ public class ItemTagBasedRecommender implements ItemTagBasedRecommend {
 		HashMap<Integer,Double> itemSimList = new HashMap<Integer,Double>();
 		List<Integer> presentItemTag = tm.getCurrentItemTag();
 		HashMap<Integer,List<Integer>> itemList = tm.getFullTagList();
+		int currentItemId = tm.getCurrentItemId(); 
 		
 		double sim = 0.0;
 		for(Entry<Integer,List<Integer>> en:itemList.entrySet()){
@@ -43,12 +44,13 @@ public class ItemTagBasedRecommender implements ItemTagBasedRecommend {
 		});
 		//get topN
 		this.recomItemList = new ArrayList<Integer>();
+		int tmpItem = 0;
 		for(int i=0;i<sortItemSimList.size()&&i<itemNum;i++){
 			//delete repeated item
-			//to-do 
-			
-			
-			this.recomItemList.add(sortItemSimList.get(i).getKey());
+			tmpItem = sortItemSimList.get(i).getKey();
+			if(tmpItem == currentItemId)
+				continue;
+			this.recomItemList.add(tmpItem);
 		}
 	}
 
