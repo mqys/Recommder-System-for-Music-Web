@@ -26,7 +26,7 @@ public class ItemTagBasedRecommender implements ItemTagBasedRecommend {
 		double sim = 0.0;
 		for(Entry<Integer,List<Integer>> en:itemList.entrySet()){
 			List<Integer> tagList = en.getValue();
-			sim = ips.getTagListSimilarity(tagList, presentItemTag);
+			sim = ips.getItemPropertySimilarity(tagList, presentItemTag);
 			itemSimList.put(en.getKey(), sim);
 		}
 		//sort

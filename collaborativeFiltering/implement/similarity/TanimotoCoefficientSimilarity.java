@@ -9,7 +9,7 @@ import collaborativeFiltering.similarity.ItemPropertySimilarity;
 public class TanimotoCoefficientSimilarity implements ItemPropertySimilarity {
 
 	@Override
-	public double getTagListSimilarity(List<Integer> propertylist1,
+	public double getItemPropertySimilarity(List<Integer> propertylist1,
 			List<Integer> propertylist2) {
 		// TODO Auto-generated method stub
 		Set<Integer> intersection = new HashSet<Integer>();

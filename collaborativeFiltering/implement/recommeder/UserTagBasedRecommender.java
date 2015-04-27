@@ -29,7 +29,7 @@ public class UserTagBasedRecommender implements UserTagBasedRecommend {
 		double sim = 0.0;
 		for(Entry<Integer,List<Integer>> en:itemList.entrySet()){
 			List<Integer> tagList = en.getValue();
-			sim = ips.getTagListSimilarity(tagList, topNTag);
+			sim = ips.getItemPropertySimilarity(tagList, topNTag);
 			itemSimList.put(en.getKey(), sim);
 		}
 		//sort

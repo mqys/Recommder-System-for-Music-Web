@@ -4,5 +4,5 @@ import java.util.List;
 
 public interface ItemPropertySimilarity {
 
-	double getTagListSimilarity(List<Integer> propertylist1,List<Integer> propertylist2);
+	double getItemPropertySimilarity(List<Integer> propertylist1,List<Integer> propertylist2);
 }
