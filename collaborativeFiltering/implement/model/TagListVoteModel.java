@@ -15,25 +15,28 @@ public class TagListVoteModel implements TagVoteModel {
 	
 	public TagListVoteModel(HashMap<Integer,List<Integer>> fullTagList
 							,List<Integer> collectionList
-							,List<Preference> prefLIst) {
+							,List<Preference> fullprefList
+							,int uid) {
 		super();
 		// TODO Auto-generated constructor stub
 		this.fullTagList = fullTagList;
 		this.likeList = new HashMap<Integer,List<Integer>>();
 		this.dislikeList = new HashMap<Integer,List<Integer>>();
-		
+
 		//collection-like
 		for(Integer i : collectionList){
 			this.likeList.put(i, this.fullTagList.get(i));
 		}
+
 		//preference
-		for(Preference p : prefLIst){
+		for(Preference p : fullprefList){
+			if(p.getUid() != uid)//not this user's preference
+				continue;
 			if(p.getScore()>0)//like
 				this.likeList.put(p.getOid(), this.fullTagList.get(p.getOid()));
 			else//dislike
 				this.dislikeList.put(p.getOid(), this.fullTagList.get(p.getOid()));
 		}
-		
 	}
 
 	
