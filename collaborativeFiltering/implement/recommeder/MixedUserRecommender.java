@@ -3,8 +3,6 @@ package collaborativeFiltering.implement.recommeder;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Set;
-import java.util.TreeSet;
 
 import collaborativeFiltering.implement.model.PrefListModel;
 import collaborativeFiltering.implement.model.TagListVoteModel;

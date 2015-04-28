@@ -214,7 +214,7 @@ public class test {
 //		prefL.add(new Preference(4,7,3));
 //		
 //		Model m = new PrefListModel(prefL);
-		Model m = new FileModel("u.data");//100k dataset
+//		Model m = new FileModel("u.data");//100k dataset
 //		Model m = new FileModel("u1.base");//80k dataset
 //		Model m = new FileModel("my.test");//15L
 		
