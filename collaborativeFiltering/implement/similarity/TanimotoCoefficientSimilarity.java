@@ -17,7 +17,7 @@ public class TanimotoCoefficientSimilarity implements ItemPropertySimilarity {
 		
 		for(Integer i:propertylist1){
 			for(Integer j:propertylist2){
-				if(i == j)
+				if(i.intValue()== j.intValue())
 					intersection.add(j);
 				union.add(j);
 			}
