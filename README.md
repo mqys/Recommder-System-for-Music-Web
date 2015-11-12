@@ -1,2 +1,2 @@
-# Recommder-System-for-Music-Web
-Simple User-based collaborative filtering recommender including itemTag-Based recommend and UserTag-based recommend
+# Simple Recommder System
+Simple User-based collaborative filtering recommender with itemTag-Based recommender and UserTag-based recommender included.
